@@ -131,13 +131,6 @@
       line-height: 1;
     }
 
-    .hero p {
-      width: min(760px, 100%);
-      margin: 1.5rem auto 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
     section {
       padding: 2.5rem 0 5rem;
     }
@@ -279,6 +272,90 @@
       font-size: 1.1rem;
     }
 
+    .card-hint {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .subject-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .subject-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 78px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .subject-item:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+    }
+
+    .subject-name {
+      display: flex;
+      align-items: center;
+      min-height: 78px;
+      padding: 1rem 1.1rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .subject-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13,53,98,0.96), rgba(21,79,147,0.96));
+      color: white;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.45rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .subject-item:hover .subject-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .subject-overlay h4 {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .subject-overlay p {
+      color: rgba(255,255,255,0.92);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .subject-overlay a {
+      align-self: flex-start;
+      margin-top: 0.15rem;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+
+    .subject-overlay a:hover {
+      background: rgba(255,255,255,0.26);
+    }
+
     .info-card p,
     .info-card li {
       color: #36414b;
@@ -383,7 +460,7 @@
             I am a fourth-year PhD student and Associate Instructor in Mathematics at
             <strong>Indiana University Bloomington</strong>. My research interests include
             <strong>model theory</strong>, <strong>o-minimality</strong>,
-            <strong>algebras/coalgebras</strong>, and <strong>term rewriting systems</strong>. 
+            <strong>algebras/coalgebras</strong>, and <strong>term rewriting systems</strong>.
             Currently, I am supervised by Prof. Larry Moss.
           </p>
           <div class="about-actions">
@@ -397,7 +474,7 @@
         </div>
       </div>
     </section>
-    
+
     <section id="talks" class="grid-section">
       <div class="container">
         <div class="section-head">
@@ -429,14 +506,13 @@
       </div>
     </section>
 
-     <section id="teaching" class="grid-section">
+    <section id="teaching" class="grid-section">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="section-title">Teaching</div>
             <h2>Courses and Instruction</h2>
           </div>
-          <br>
           <p>
             "If you can't solve a problem, then there is an easier problem you can solve: find it." — <i>George Pólya</i>
           </p>
@@ -448,13 +524,35 @@
             <p>Teaching MATH - X201, Transition to Calculus II.</p>
           </article>
 
-          <article class="info-card">
+          <article class="info-card subject-card">
             <h3>Past Courses</h3>
-            <ul>
-              <li>Calculus</li>
-              <li>Finite Mathematics</li>
-              <li>Precalculus</li>
-            </ul>
+            <p class="card-hint">Hover over a subject to see more details.</p>
+            <div class="subject-list">
+              <div class="subject-item">
+                <div class="subject-name">Calculus</div>
+                <div class="subject-overlay">
+                  <h4>Calculus</h4>
+                  <p>Add your course description, sample topics, worksheets, and archived materials here.</p>
+                  <a href="calculus.html">View details</a>
+                </div>
+              </div>
+              <div class="subject-item">
+                <div class="subject-name">Finite Mathematics</div>
+                <div class="subject-overlay">
+                  <h4>Finite Mathematics</h4>
+                  <p>Link notes, syllabus highlights, quizzes, or practice resources for this course.</p>
+                  <a href="finite-math.html">View details</a>
+                </div>
+              </div>
+              <div class="subject-item">
+                <div class="subject-name">Precalculus</div>
+                <div class="subject-overlay">
+                  <h4>Precalculus</h4>
+                  <p>Add a brief overview and connect visitors to handouts, schedules, or class pages.</p>
+                  <a href="precalculus.html">View details</a>
+                </div>
+              </div>
+            </div>
           </article>
 
           <article class="info-card">
