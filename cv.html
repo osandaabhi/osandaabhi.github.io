@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV | Osanda Illeperuma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #1f1f1f;
+      --muted: #5f646d;
+      --accent: #154f93;
+      --accent-dark: #0d3562;
+      --nav-bg: #050505;
+      --shadow: 0 20px 50px rgba(0,0,0,0.08);
+      --radius: 24px;
+      --max-width: 1180px;
+      --card-bg: rgba(255,255,255,0.82);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, #f7f7f6 0%, #efefec 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 2rem), var(--max-width)); margin: 0 auto; }
+
+    .topbar {
+      background: var(--nav-bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .brand {
+      color: white;
+      font-size: clamp(1.2rem, 2vw, 2rem);
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a {
+      color: rgba(255,255,255,0.92);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
+
+    .hero {
+      padding: 6rem 0 3rem;
+      text-align: center;
+    }
+    .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.82rem;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      color: var(--accent);
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    section { padding: 1.5rem 0 3.5rem; }
+
+    .contact-strip {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .pill {
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid #e6ebf2;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+
+    .resume-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.45fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 1.7rem;
+    }
+
+    .card h2 {
+      color: var(--accent);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .stack { display: grid; gap: 1.2rem; }
+    .entry { padding-bottom: 1rem; border-bottom: 1px solid #e7ebf0; }
+    .entry:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .entry h3 {
+      color: var(--accent-dark);
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+      line-height: 1.35;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-bottom: 0.45rem;
+      font-weight: 500;
+    }
+
+    .entry p { color: #2d3640; font-size: 0.98rem; }
+    ul { padding-left: 1.1rem; color: #2d3640; }
+    li { margin-bottom: 0.4rem; }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+    .skill-tag {
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: #edf3fb;
+      border: 1px solid #dbe6f4;
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.4rem;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-secondary { background: white; color: var(--accent); border: 1px solid #d5dce6; }
+
+    footer {
+      padding: 1.4rem 0 2.2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      .resume-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .nav { padding: 1rem 0; flex-direction: column; align-items: start; }
+      .hero { padding: 4.8rem 0 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html#top">Welcome!!!</a>
+      <nav class="nav-links">
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#talks">Publications/Talks</a>
+        <a href="index.html#teaching">Teaching</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="active" href="cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Curriculum Vitae</div>
+        <h1>OSANDA ILLEPERUMA</h1>
+        <p>Mathematics PhD student, instructor, and researcher in logic, model theory, o-minimality, and coalgebraic methods.</p>
+        <div class="contact-strip">
+          <a class="pill" href="mailto:oaillepe@iu.edu">oaillepe@iu.edu</a>
+          <a class="pill" href="mailto:osandaabhi@gmail.com">osandaabhi@gmail.com</a>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="files/CV___Osanda_Illeperuma__Osanda_ New.pdf">Download PDF CV</a>
+          <a class="btn btn-secondary" href="index.html">Back to Homepage</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container resume-layout">
+        <div class="stack">
+          <article class="card">
+            <div class="section-title">Education</div>
+            <div class="entry">
+              <h3>PhD in Mathematics, Indiana University, Bloomington, USA</h3>
+              <div class="meta">August 2022 – Present</div>
+              <p>CGPA: 3.88 / 4.00</p>
+            </div>
+            <div class="entry">
+              <h3>MA in Mathematics, Indiana University, Bloomington, USA</h3>
+              <div class="meta">August 2022 – February 2024</div>
+              <p>CGPA: 3.75 / 4.00</p>
+            </div>
+            <div class="entry">
+              <h3>BSc Honors Degree in Mathematics, University of Colombo, Sri Lanka</h3>
+              <div class="meta">January 2017 – May 2021</div>
+              <p>CGPA: 3.94 / 4.30</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="section-title">Skills</div>
+            <div class="skill-list">
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Proof Engineering</span>
+              <span class="skill-tag">Interdisciplinary Research</span>
+              <span class="skill-tag">Mathematical Communication</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Lean</span>
+              <span class="skill-tag">GitHub</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="section-title">Academic Achievements</div>
+            <ul>
+              <li>Hazel King Thompson Fellowship — 2023</li>
+              <li>College of Arts and Sciences Fellowship — 2022</li>
+              <li>Dharmadasa Punchihewa Memorial Prize for Mathematics — 2020</li>
+              <li>Gulamhusein A. J. Noorbhai Gold Medal for the Best Student in Mathematics — 2020</li>
+              <li>Douglas Amarasekara Prize for the Best Student in Mathematics — 2020</li>
+              <li>Mr. and Mrs. D. P. Epasinghe Memorial Gold Medal for Mathematics — 2020</li>
+              <li>Professor Valentine Joseph Memorial Gold Medal for the Best Student in Mathematics — 2020</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="stack">
+          <article class="card">
+            <div class="section-title">Research Experience</div>
+            <div class="entry">
+              <h3>Category Theoretic Applications in Computer Science</h3>
+              <div class="meta">Advisor: Dr. Jayampathy Ratnayake</div>
+              <p>The research focused on surveying the formalization of automata theory in computer science within a category-theoretic framework.</p>
+            </div>
+            <div class="entry">
+              <h3>Model Theory, O-minimal Structures, Initial and Final Coalgebras</h3>
+              <div class="meta">PhD research project · Advisor: Dr. Lawrence S. Moss</div>
+              <p>The project focuses on o-minimal structures generated by Pfaffian and Noetherian functions, and on formalizing and analyzing their properties using algebraic and coalgebraic methods.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="section-title">Working Experience</div>
+            <div class="entry">
+              <h3>Associate Instructor, Department of Mathematics, Indiana University</h3>
+              <div class="meta">May 2023 – Present</div>
+            </div>
+            <div class="entry">
+              <h3>Graduate Teaching Assistant, Department of Mathematics, Indiana University</h3>
+              <div class="meta">January 2023 – May 2023</div>
+            </div>
+            <div class="entry">
+              <h3>Temporary Assistant Lecturer, Department of Mathematics, University of Colombo</h3>
+              <div class="meta">November 2021 – May 2022</div>
+            </div>
+            <div class="entry">
+              <h3>Teaching Assistant, Department of Mathematics, University of Colombo</h3>
+              <div class="meta">May 2021 – November 2021</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="section-title">Extra-Curricular Activities</div>
+            <div class="entry">
+              <h3>Local Organization Committee Member, CALCO 2023 &amp; MFPS XXXIX</h3>
+              <div class="meta">2023</div>
+              <p>Member of the local organization committee for the conferences hosted at Indiana University Bloomington on June 19–23, 2023.</p>
+            </div>
+            <div class="entry">
+              <h3>President, Epsilon Delta Society, Department of Mathematics, University of Colombo</h3>
+              <div class="meta">2019 – 2020</div>
+              <ul>
+                <li>Organized the TIMO and HKIMO heats award ceremony in collaboration with the Sri Lanka Olympiad Mathematics Foundation.</li>
+                <li>Organized workshops for school students preparing for SLMC, TIMO, HKIMO, and HKISO.</li>
+                <li>Initiated the problem-solving session “A Date with Putnam” for science undergraduates.</li>
+              </ul>
+            </div>
+            <div class="entry">
+              <h3>Other Activities and Hobbies</h3>
+              <ul>
+                <li>President, Interact Club, St. Aloysius’ College-Galle (2012–2013)</li>
+                <li>Member, Gavel Club (2018–2021)</li>
+                <li>Chess, badminton, and music — violin, guitar, and keyboard</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Osanda Illeperuma. Built with GitHub Pages.</div>
+  </footer>
+</body>
+</html>
