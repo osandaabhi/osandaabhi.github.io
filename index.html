@@ -428,6 +428,64 @@
         padding: 1.4rem;
       }
     }
+    .talk-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.talk-preview {
+  margin-top: 0.8rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid #dde5ef;
+  background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+  color: var(--accent-dark);
+  font-weight: 700;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.talk-card:hover .talk-preview {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+}
+
+.talk-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13,53,98,0.97), rgba(21,79,147,0.97));
+  color: white;
+  padding: 1.3rem 1.2rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  overflow-y: auto;
+}
+
+.talk-card:hover .talk-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.talk-overlay h4 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.talk-list {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.talk-list li {
+  margin-bottom: 0.9rem;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.55;
+}
+
+.talk-list strong {
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -487,11 +545,36 @@
           </p> -->
         </div>
 
-        <div class="grid">
-          <article class="info-card">
-            <h3>Explanatory Talk</h3>
-            <p><strong>Title:</strong> Systems of PDEs as Coalgebras<br><strong>Seminar:</strong> Graduate Student Seminar<br><strong>Venue:</strong> Indiana University Bloomington</p>
-          </article>
+       <article class="info-card talk-card">
+       <h3>Explanatory Talks</h3>
+        <p class="card-hint">Hover to view the full list of talks.</p>
+
+        <div class="talk-preview">
+          Systems of PDEs as Coalgebras
+        </div>
+
+        <div class="talk-overlay">
+          <h4>Explanatory Talks</h4>
+          <ul class="talk-list">
+          <li>
+            <strong>Systems of PDEs as Coalgebras</strong><br>
+            Graduate Student Seminar, Indiana University Bloomington
+          </li>
+          <li>
+            <strong>Add your second talk title here</strong><br>
+            Seminar / Venue / Date
+          </li>
+          <li>
+            <strong>Add your third talk title here</strong><br>
+            Seminar / Venue / Date
+          </li>
+          <li>
+            <strong>Add your fourth talk title here</strong><br>
+            Seminar / Venue / Date
+          </li>
+          </ul>
+        </div>
+      </article>
 
           <article class="info-card">
             <h3>Conference Presentation</h3>
