@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Osanda Illeperuma</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg: #f4f4f2;
@@ -17,7 +19,7 @@
       --accent-dark: #0d3562;
       --nav-bg: #050505;
       --line: #dddddd;
-      --shadow: 0 20px 50px rgba(0,0,0,0.08);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
       --max-width: 1180px;
       --radius: 24px;
     }
@@ -59,7 +61,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     }
 
     .nav {
@@ -85,7 +87,7 @@
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.92);
+      color: rgba(255, 255, 255, 0.92);
       font-size: 0.95rem;
       font-weight: 700;
       letter-spacing: 0.04em;
@@ -136,8 +138,8 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(10px);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -200,7 +202,7 @@
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     }
 
     .btn-primary {
@@ -225,7 +227,7 @@
       border-radius: 28px;
       object-fit: cover;
       box-shadow: 0 24px 40px rgba(16, 34, 64, 0.18);
-      border: 8px solid rgba(255,255,255,0.8);
+      border: 8px solid rgba(255, 255, 255, 0.8);
       background: #d9d9d9;
     }
 
@@ -254,16 +256,16 @@
 
     .info-card {
       padding: 1.5rem;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255, 255, 255, 0.8);
       border: 1px solid #ebedf0;
       border-radius: 22px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .info-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 18px 32px rgba(0,0,0,0.09);
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.09);
     }
 
     .info-card h3 {
@@ -312,7 +314,7 @@
     .subject-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(13,53,98,0.96), rgba(21,79,147,0.96));
+      background: linear-gradient(135deg, rgba(13, 53, 98, 0.96), rgba(21, 79, 147, 0.96));
       color: white;
       padding: 1rem 1.1rem;
       display: flex;
@@ -335,7 +337,7 @@
     }
 
     .subject-overlay p {
-      color: rgba(255,255,255,0.92);
+      color: rgba(255, 255, 255, 0.92);
       font-size: 0.88rem;
       line-height: 1.55;
       margin: 0;
@@ -348,12 +350,12 @@
       font-weight: 700;
       padding: 0.45rem 0.8rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
     }
 
     .subject-overlay a:hover {
-      background: rgba(255,255,255,0.26);
+      background: rgba(255, 255, 255, 0.26);
     }
 
     .info-card p,
@@ -389,6 +391,7 @@
     }
 
     @media (max-width: 920px) {
+
       .about,
       .grid {
         grid-template-columns: 1fr;
@@ -428,122 +431,124 @@
         padding: 1.4rem;
       }
     }
-      .talk-card {
-        position: relative;
-        overflow: hidden;
-        min-height: 260px;
-      }
 
-      .talk-preview {
-        margin-top: 0.8rem;
-        padding: 1rem 1.1rem;
-        border-radius: 18px;
-        border: 1px solid #dde5ef;
-        background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
-        color: var(--accent-dark);
-        font-weight: 700;
-        transition: transform 0.22s ease, box-shadow 0.22s ease;
-      }
+    .talk-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+    }
 
-      .talk-card:hover .talk-preview {
-        transform: translateY(-3px) scale(1.01);
-        box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
-      }
+    .talk-preview {
+      margin-top: 0.8rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      color: var(--accent-dark);
+      font-weight: 700;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
 
-      .talk-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(13,53,98,0.97), rgba(21,79,147,0.97));
-        color: white;
-        padding: 1.3rem 1.2rem;
-        opacity: 0;
-        transform: translateY(16px);
-        transition: opacity 0.25s ease, transform 0.25s ease;
-        overflow-y: auto;
-      }
+    .talk-card:hover .talk-preview {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+    }
 
-.talk-card:hover .talk-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .talk-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13, 53, 98, 0.97), rgba(21, 79, 147, 0.97));
+      color: white;
+      padding: 1.3rem 1.2rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      overflow-y: auto;
+    }
 
-.talk-overlay h4 {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-}
+    .talk-card:hover .talk-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.talk-list {
-  padding-left: 1rem;
-  margin: 0;
-}
+    .talk-overlay h4 {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
 
-.talk-list li {
-  margin-bottom: 0.9rem;
-  color: rgba(255,255,255,0.95);
-  line-height: 1.55;
-}
+    .talk-list {
+      padding-left: 1rem;
+      margin: 0;
+    }
 
-.talk-list strong {
-  color: white;
-}
+    .talk-list li {
+      margin-bottom: 0.9rem;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.55;
+    }
 
-/* adding new style for drop down */
+    .talk-list strong {
+      color: white;
+    }
+
+    /* adding new style for drop down */
     .talk-dropdown-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
-.talk-summary {
-  margin-top: 0.8rem;
-  padding: 1rem 1.1rem;
-  border-radius: 18px;
-  border: 1px solid #dde5ef;
-  background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
-  color: var(--accent-dark);
-  font-weight: 700;
-}
+    .talk-summary {
+      margin-top: 0.8rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
 
-.talk-dropdown {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 0;
-  transition:
-    max-height 0.4s ease,
-    opacity 0.25s ease,
-    margin-top 0.25s ease;
-}
+    .talk-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-top: 0;
+      transition:
+        max-height 0.4s ease,
+        opacity 0.25s ease,
+        margin-top 0.25s ease;
+    }
 
-.talk-dropdown-card:hover .talk-dropdown {
-  max-height: 420px;
-  opacity: 1;
-  margin-top: 1rem;
-}
+    .talk-dropdown-card:hover .talk-dropdown {
+      max-height: 420px;
+      opacity: 1;
+      margin-top: 1rem;
+    }
 
-.talk-dropdown-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid #e2e8f0;
-  padding-top: 1rem;
-}
+    .talk-dropdown-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1rem;
+    }
 
-.talk-dropdown-list li {
-  padding: 0.9rem 0;
-  border-bottom: 1px solid #edf1f5;
-  color: #36414b;
-  line-height: 1.55;
-}
+    .talk-dropdown-list li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #edf1f5;
+      color: #36414b;
+      line-height: 1.55;
+    }
 
-.talk-dropdown-list li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
+    .talk-dropdown-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
 
-.talk-dropdown-list strong {
-  color: var(--accent-dark);
-}
+    .talk-dropdown-list strong {
+      color: var(--accent-dark);
+    }
   </style>
 </head>
+
 <body>
   <header class="topbar">
     <div class="container nav">
@@ -601,7 +606,7 @@
           </p> -->
         </div>
 
-       <!-- <article class="info-card talk-card">
+        <!-- <article class="info-card talk-card">
        <h3>Explanatory Talks</h3>
         <p class="card-hint">Hover to view the full list of talks.</p> -->
 
@@ -610,25 +615,25 @@
         </div> -->
 
         <article class="info-card talk-dropdown-card">
-        <h3>Explanatory Talks</h3>
-        <p class="card-hint">Hover to expand and view more talks.</p>
+          <h3>Explanatory Talks</h3>
+          <p class="card-hint">Hover to expand and view more talks.</p>
 
-        <div class="talk-summary">
-           <strong>Systems of PDEs as Coalgebras</strong><br>
+          <div class="talk-summary">
+            <strong>Systems of PDEs as Coalgebras</strong><br>
             Graduate Student Seminar, Indiana University Bloomington, 2026
-        </div>
+          </div>
 
-        <div class="talk-dropdown">
-          <ul class="talk-dropdown-list">
-          <!-- <li>
+          <div class="talk-dropdown">
+            <ul class="talk-dropdown-list">
+              <!-- <li>
             <strong>Systems of PDEs as Coalgebras</strong><br>
             Graduate Student Seminar, Indiana University Bloomington, 2026
           </li> -->
-          <li>
-            <strong>Introduction to Natural Logic</strong><br>
-            Graduate Student Seminar, Indiana University Bloomington, 2024
-          </li>
-        <!-- <li>
+              <li>
+                <strong>Introduction to Natural Logic</strong><br>
+                Graduate Student Seminar, Indiana University Bloomington, 2024
+              </li>
+              <!-- <li>
             <strong>Add your third talk title here</strong><br>
             Seminar / Venue / Date
           </li>
@@ -636,11 +641,11 @@
             <strong>Add your fourth talk title here</strong><br>
             Seminar / Venue / Date
           </li> -->
-        </ul>
-      </div>
-    </article>
+            </ul>
+          </div>
+        </article>
 
-          <!-- <article class="info-card">
+        <!-- <article class="info-card">
             <h3>Conference Presentation</h3>
             <p><strong>Title:</strong> 
               <br>
@@ -649,32 +654,32 @@
               <strong>Date:</strong></p>
           </article> -->
 
-          <article class="info-card">
-            <h3>Upcoming</h3>
-            <p>List future talks, invited lectures, or works in progress.</p>
-          </article>
+        <article class="info-card">
+          <h3>Upcoming</h3>
+          <p>List future talks, invited lectures, or works in progress.</p>
+        </article>
 
 
-    <article class="info-card talk-dropdown-card">
-        <h3>Past Conferences</h3>
-        <p class="card-hint">Hover to expand and view more talks.</p>
+        <article class="info-card talk-dropdown-card">
+          <h3>Past Conferences</h3>
+          <p class="card-hint">Hover to expand and view more talks.</p>
 
-        <div class="talk-summary">
-           <strong><a href = "https://brinmrc.umd.edu/fall-25-nadstm/">North American Set Theory Meeting</a></strong><br>
+          <div class="talk-summary">
+            <strong><a href="https://brinmrc.umd.edu/fall-25-nadstm/">North American Set Theory Meeting</a></strong><br>
             Brin Mathematics Research Center, Department of Mathematics, University of Maryland, October 2025
-        </div>
+          </div>
 
-        <div class="talk-dropdown">
-          <ul class="talk-dropdown-list">
-          <!-- <li>
+          <div class="talk-dropdown">
+            <ul class="talk-dropdown-list">
+              <!-- <li>
             <strong>Systems of PDEs as Coalgebras</strong><br>
             Graduate Student Seminar, Indiana University Bloomington, 2026
           </li> -->
-          <li>
-            <strong><a href = "https://coalg.org/calco-mfps-2023/">CALCO 2023 & MFPS XXXIX</a></strong><br>
-            Indiana University Bloomington, June 2023
-          </li>
-        <!-- <li>
+              <li>
+                <strong><a href="https://coalg.org/calco-mfps-2023/">CALCO 2023 & MFPS XXXIX</a></strong><br>
+                Indiana University Bloomington, June 2023
+              </li>
+              <!-- <li>
             <strong>Add your third talk title here</strong><br>
             Seminar / Venue / Date
           </li>
@@ -682,13 +687,13 @@
             <strong>Add your fourth talk title here</strong><br>
             Seminar / Venue / Date
           </li> -->
-        </ul>
-      </div>
-    </article>
+            </ul>
+          </div>
+        </article>
       </div>
       </div>
     </section>
-    
+
     <section id="teaching" class="grid-section">
       <div class="container">
         <div class="section-head">
@@ -715,13 +720,17 @@
               <div class="subject-item">
                 <div class="subject-name">Calculus</div>
                 <div class="subject-overlay">
-                  <a href="calculus.html"><h4>Calculus</h4></a>
+                  <a href="calculus.html">
+                    <h4>Calculus</h4>
+                  </a>
                 </div>
               </div>
               <div class="subject-item">
                 <div class="subject-name">Finite Mathematics</div>
                 <div class="subject-overlay">
-                  <a href="finite_math.html"><h4>Finite Mathematics</h4></a>
+                  <a href="finite_math.html">
+                    <h4>Finite Mathematics</h4>
+                  </a>
                 </div>
               </div>
               <!--
@@ -760,4 +769,5 @@
     <div class="container">© 2026 Osanda Illeperuma. Built with GitHub Pages.</div>
   </footer>
 </body>
+
 </html>
