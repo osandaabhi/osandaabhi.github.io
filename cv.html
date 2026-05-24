@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV | Osanda Illeperuma</title>
+  <title>Osanda Illeperuma</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
+      --bg: #f4f4f2;
+      --surface: #ffffff;
       --text: #1f1f1f;
       --muted: #5f646d;
       --accent: #154f93;
       --accent-dark: #0d3562;
       --nav-bg: #050505;
-      --shadow: 0 20px 50px rgba(0,0,0,0.08);
-      --radius: 24px;
+      --line: #dddddd;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
       --max-width: 1180px;
-      --card-bg: rgba(255,255,255,0.82);
+      --radius: 24px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(180deg, #f7f7f6 0%, #efefec 100%);
       color: var(--text);
       line-height: 1.7;
     }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(calc(100% - 2rem), var(--max-width)); margin: 0 auto; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
 
     .topbar {
       background: var(--nav-bg);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     }
+
     .nav {
       min-height: 78px;
       display: flex;
@@ -45,6 +71,7 @@
       justify-content: space-between;
       gap: 1.5rem;
     }
+
     .brand {
       color: white;
       font-size: clamp(1.2rem, 2vw, 2rem);
@@ -52,9 +79,15 @@
       font-weight: 500;
       text-transform: uppercase;
     }
-    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
     .nav-links a {
-      color: rgba(255,255,255,0.92);
+      color: rgba(255, 255, 255, 0.92);
       font-size: 0.95rem;
       font-weight: 700;
       letter-spacing: 0.04em;
@@ -62,6 +95,7 @@
       position: relative;
       padding-bottom: 0.25rem;
     }
+
     .nav-links a::after {
       content: "";
       position: absolute;
@@ -72,53 +106,60 @@
       background: white;
       transition: width 0.25s ease;
     }
+
     .nav-links a:hover::after,
-    .nav-links a.active::after { width: 100%; }
+    .nav-links a.active::after {
+      width: 100%;
+    }
 
     .hero {
-      padding: 6rem 0 3rem;
+      padding: 7rem 0 5rem;
       text-align: center;
     }
-    .eyebrow {
+
+    .hero .eyebrow {
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 0.82rem;
       margin-bottom: 1.25rem;
     }
+
     .hero h1 {
       color: var(--accent);
-      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
       font-weight: 800;
       letter-spacing: 0.03em;
       line-height: 1;
-      margin-bottom: 1rem;
     }
-    .hero p {
-      max-width: 760px;
-      margin: 0 auto;
+
+    .hero-subtitle {
+      width: min(760px, 100%);
+      margin: 1.25rem auto 0;
       color: var(--muted);
-      font-size: 1.02rem;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      font-weight: 500;
     }
 
-    section { padding: 1.5rem 0 3.5rem; }
-
-    .contact-strip {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
+    section {
+      padding: 2.5rem 0 5rem;
     }
 
-    .pill {
-      padding: 0.8rem 1rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid #e6ebf2;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
-      font-weight: 600;
-      color: var(--accent-dark);
+    .card {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 3rem;
     }
 
     .section-title {
@@ -127,77 +168,35 @@
       letter-spacing: 0.15em;
       color: var(--muted);
       text-transform: uppercase;
-      margin-bottom: 0.9rem;
-    }
-
-    .resume-layout {
-      display: grid;
-      grid-template-columns: 0.95fr 1.45fr;
-      gap: 1.4rem;
-      align-items: start;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid rgba(255,255,255,0.7);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      padding: 1.7rem;
-    }
-
-    .card h2 {
-      color: var(--accent);
-      font-size: 1.6rem;
       margin-bottom: 1rem;
+    }
+
+    .about h2,
+    .grid-section h2,
+    .contact h2 {
+      color: var(--accent);
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1.25rem;
       line-height: 1.1;
     }
 
-    .stack { display: grid; gap: 1.2rem; }
-    .entry { padding-bottom: 1rem; border-bottom: 1px solid #e7ebf0; }
-    .entry:last-child { border-bottom: none; padding-bottom: 0; }
+    .about p {
+      font-size: 1.04rem;
+      margin-bottom: 1.1rem;
+      color: #29313a;
+    }
 
-    .entry h3 {
+    .about strong {
       color: var(--accent-dark);
-      font-size: 1.05rem;
-      margin-bottom: 0.25rem;
-      line-height: 1.35;
     }
 
-    .meta {
-      color: var(--muted);
-      font-size: 0.93rem;
-      margin-bottom: 0.45rem;
-      font-weight: 500;
-    }
-
-    .entry p { color: #2d3640; font-size: 0.98rem; }
-    ul { padding-left: 1.1rem; color: #2d3640; }
-    li { margin-bottom: 0.4rem; }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-    }
-    .skill-tag {
-      padding: 0.55rem 0.9rem;
-      border-radius: 999px;
-      background: #edf3fb;
-      border: 1px solid #dbe6f4;
-      color: var(--accent-dark);
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .actions {
+    .about-actions {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-top: 1.4rem;
-      justify-content: center;
+      margin-top: 1rem;
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -208,9 +207,248 @@
       font-size: 0.95rem;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
-    .btn-primary { background: var(--accent); color: white; }
-    .btn-secondary { background: white; color: var(--accent); border: 1px solid #d5dce6; }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--accent);
+      border: 1px solid #d5dce6;
+    }
+
+    .portrait-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .portrait {
+      width: min(100%, 340px);
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      object-fit: cover;
+      box-shadow: 0 24px 40px rgba(16, 34, 64, 0.18);
+      border: 8px solid rgba(255, 255, 255, 0.8);
+      background: #d9d9d9;
+    }
+
+    .grid-section {
+      padding-top: 0.5rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-head p {
+      max-width: 640px;
+      color: var(--muted);
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 46px;
+      height: 3px;
+      margin-top: 0.55rem;
+      border-radius: 999px;
+      background: var(--accent);
+      opacity: 0.85;
+    }
+
+    .soft-section {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .research-card {
+      padding: 2.2rem;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .research-item {
+      padding: 1.15rem;
+      border-radius: 20px;
+      border: 1px solid #e3e8ef;
+      background: linear-gradient(135deg, #ffffff 0%, #f5f8fc 100%);
+    }
+
+    .research-item h3 {
+      color: var(--accent-dark);
+      font-size: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .research-item p {
+      color: #36414b;
+      font-size: 0.94rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .teaching-grid {
+      grid-template-columns: 1.6fr 0.9fr;
+      align-items: stretch;
+    }
+
+    .teaching-side-grid {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.4rem;
+    }
+
+    .compact-teaching-card {
+      min-height: 0;
+    }
+
+    .info-card {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ebedf0;
+      border-radius: 22px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.09);
+    }
+
+    .info-card h3 {
+      color: var(--accent-dark);
+      margin-bottom: 0.6rem;
+      font-size: 1.1rem;
+    }
+
+    .card-hint {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .subject-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .subject-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 78px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .subject-item:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+    }
+
+    .subject-name {
+      display: flex;
+      align-items: center;
+      min-height: 78px;
+      padding: 1rem 1.1rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .subject-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13, 53, 98, 0.96), rgba(21, 79, 147, 0.96));
+      color: white;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.45rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .subject-item:hover .subject-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .subject-overlay h4 {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .subject-overlay p {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .subject-overlay a {
+      align-self: flex-start;
+      margin-top: 0.15rem;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .subject-overlay a:hover {
+      background: rgba(255, 255, 255, 0.26);
+    }
+
+    .info-card p,
+    .info-card li {
+      color: #36414b;
+      font-size: 0.97rem;
+    }
+
+    .info-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .contact {
+      padding-bottom: 6rem;
+    }
+
+    .contact-box {
+      padding: 2.2rem;
+      text-align: center;
+    }
+
+    .contact-box p {
+      width: min(650px, 100%);
+      margin: 0 auto 1.4rem;
+      color: var(--muted);
+    }
 
     footer {
       padding: 1.4rem 0 2.2rem;
@@ -220,156 +458,807 @@
     }
 
     @media (max-width: 920px) {
-      .resume-layout { grid-template-columns: 1fr; }
+
+      .about,
+      .grid,
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        padding: 2rem;
+      }
+
+      .portrait-wrap {
+        order: -1;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .teaching-side-grid {
+        grid-template-rows: auto;
+      }
     }
 
-    @media (max-width: 700px) {
-      .nav { padding: 1rem 0; flex-direction: column; align-items: start; }
-      .hero { padding: 4.8rem 0 2.5rem; }
+    @media (max-width: 640px) {
+      .nav {
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .hero {
+        padding: 5rem 0 3rem;
+      }
+
+      .about {
+        gap: 1.5rem;
+        padding: 1.4rem;
+      }
     }
+
+    .talk-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+    }
+
+    .talk-preview {
+      margin-top: 0.8rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      color: var(--accent-dark);
+      font-weight: 700;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .talk-card:hover .talk-preview {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+    }
+
+    .talk-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13, 53, 98, 0.97), rgba(21, 79, 147, 0.97));
+      color: white;
+      padding: 1.3rem 1.2rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      overflow-y: auto;
+    }
+
+    .talk-card:hover .talk-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .talk-overlay h4 {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .talk-list {
+      padding-left: 1rem;
+      margin: 0;
+    }
+
+    .talk-list li {
+      margin-bottom: 0.9rem;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.55;
+    }
+
+    .talk-list strong {
+      color: white;
+    }
+
+    /* adding new style for drop down */
+    .talk-dropdown-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .talk-summary {
+      margin-top: 0.8rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .talk-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-top: 0;
+      transition:
+        max-height 0.4s ease,
+        opacity 0.25s ease,
+        margin-top 0.25s ease;
+    }
+
+    .talk-dropdown-card:hover .talk-dropdown {
+      max-height: 420px;
+      opacity: 1;
+      margin-top: 1rem;
+    }
+
+    .talk-dropdown-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1rem;
+    }
+
+    .talk-dropdown-list li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #edf1f5;
+      color: #36414b;
+      line-height: 1.55;
+    }
+
+    .talk-dropdown-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .talk-dropdown-list strong {
+      color: var(--accent-dark);
+    }
+
+
+    /* Full-card hover overlay for Past Courses */
+    .past-courses-card {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+    }
+
+    .past-courses-preview {
+      margin-top: 0.8rem;
+      display: grid;
+      gap: 0.85rem;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .past-preview-item {
+      padding: 0.95rem 1.05rem;
+      border-radius: 18px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      color: var(--accent-dark);
+    }
+
+    .past-preview-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .past-preview-item strong {
+      display: block;
+      font-size: 0.96rem;
+      line-height: 1.35;
+    }
+
+    .past-preview-item span:last-child {
+      display: block;
+      margin-top: 0.15rem;
+      color: #4c5864;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .past-courses-card:hover .past-courses-preview,
+    .past-courses-card:focus-within .past-courses-preview {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+    }
+
+    .past-courses-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      padding: 1.6rem 1.45rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(13, 53, 98, 0.98), rgba(21, 79, 147, 0.98));
+      color: white;
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      overflow-y: auto;
+    }
+
+    .past-courses-card:hover .past-courses-overlay,
+    .past-courses-card:focus-within .past-courses-overlay {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .past-courses-overlay h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .past-course-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .past-course-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .past-course-group h5 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .past-course-group ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .past-course-group li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.45;
+    }
+
+    .past-course-group li:last-child {
+      border-bottom: none;
+    }
+
+    .past-course-group strong {
+      color: white;
+    }
+
+
+
+    /* Consistent full-card reveal overlay for talks and conferences */
+    .reveal-card {
+      position: relative;
+      min-height: 285px;
+      overflow: hidden;
+    }
+
+    .reveal-preview {
+      margin-top: 0.8rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      color: var(--accent-dark);
+      font-weight: 700;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .reveal-card:hover .reveal-preview,
+    .reveal-card:focus-within .reveal-preview {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+    }
+
+    .reveal-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      padding: 1.45rem 1.3rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(13, 53, 98, 0.98), rgba(21, 79, 147, 0.98));
+      color: white;
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      overflow-y: auto;
+    }
+
+    .reveal-card:hover .reveal-overlay,
+    .reveal-card:focus-within .reveal-overlay {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .reveal-overlay h4 {
+      font-size: 1.02rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .reveal-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .reveal-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.5;
+    }
+
+    .reveal-list li:last-child {
+      border-bottom: none;
+    }
+
+    .reveal-list strong,
+    .reveal-list a {
+      color: white;
+    }
+
+    .cv-modal-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .cv-open-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid #d5dce6;
+      background: white;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .cv-open-tab:hover {
+      background: #eef4fb;
+    }
+
+
+
+    /* Subtle monochrome icons */
+    .icon {
+      width: 1.05em;
+      height: 1.05em;
+      display: inline-block;
+      vertical-align: -0.16em;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex: 0 0 auto;
+    }
+
+    .btn .icon,
+    .cv-open-tab .icon,
+    .cv-close .icon {
+      margin-right: 0.45rem;
+    }
+
+    .heading-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .heading-icon .icon {
+      color: var(--accent);
+      opacity: 0.82;
+    }
+
+    .section-title.with-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .section-title.with-icon .icon {
+      color: var(--accent);
+      opacity: 0.75;
+    }
+
+    .past-preview-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .past-preview-label .icon {
+      width: 0.95em;
+      height: 0.95em;
+      opacity: 0.72;
+    }
+
+    /* CV modal overlay */
+    .cv-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      background: rgba(5, 5, 5, 0.68);
+      backdrop-filter: blur(6px);
+    }
+
+    .cv-modal.is-open {
+      display: flex;
+    }
+
+    .cv-modal-content {
+      width: min(96vw, 1280px);
+      height: min(94vh, 1000px);
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      animation: cvModalIn 0.24s ease;
+    }
+
+    @keyframes cvModalIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .cv-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f8fafc;
+    }
+
+    .cv-modal-header h3 {
+      color: var(--accent-dark);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .cv-close {
+      border: none;
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
+      padding: 0.55rem 0.9rem;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .cv-close:hover {
+      transform: translateY(-1px);
+      background: var(--accent-dark);
+    }
+
+    .cv-frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: white;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 640px) {
+      .cv-modal {
+        padding: 0.75rem;
+      }
+
+      .cv-modal-content {
+        width: 98vw;
+        height: 94vh;
+        border-radius: 18px;
+      }
+    }
+
   </style>
 </head>
+
 <body>
-  <!-- <header class="topbar">
+
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;" focusable="false">
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <path d="M4 7l8 6 8-6"></path>
+    </symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24">
+      <path d="M7 3h7l5 5v13H7z"></path>
+      <path d="M14 3v5h5"></path>
+      <path d="M9 13h6"></path>
+      <path d="M9 17h6"></path>
+    </symbol>
+    <symbol id="icon-talk" viewBox="0 0 24 24">
+      <path d="M4 5h16v10H8l-4 4z"></path>
+      <path d="M8 9h8"></path>
+      <path d="M8 12h5"></path>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <rect x="4" y="5" width="16" height="15" rx="2"></rect>
+      <path d="M8 3v4"></path>
+      <path d="M16 3v4"></path>
+      <path d="M4 10h16"></path>
+    </symbol>
+    <symbol id="icon-teaching" viewBox="0 0 24 24">
+      <path d="M4 5h16v11H4z"></path>
+      <path d="M8 20h8"></path>
+      <path d="M12 16v4"></path>
+      <path d="M8 9h8"></path>
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24">
+      <path d="M8 6h12"></path>
+      <path d="M8 12h12"></path>
+      <path d="M8 18h12"></path>
+      <path d="M4 6h.01"></path>
+      <path d="M4 12h.01"></path>
+      <path d="M4 18h.01"></path>
+    </symbol>
+  </svg>
+  <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="index.html#top">Welcome!!!</a>
+      <a class="brand" href="#top">Welcome!!!</a>
       <nav class="nav-links">
-        <a href="index.html#about">About Me</a>
-        <a href="index.html#talks">Publications/Talks</a>
-        <a href="index.html#teaching">Teaching</a>
-        <a href="index.html#contact">Contact</a>
-        <a class="active" href="cv.html">CV</a>
+        <a class="active" href="#about">About Me</a>
+        <a href="#talks">Talks + Travel</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
-  </header> -->
+  </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
       <div class="container">
-        <div class="eyebrow">Curriculum Vitae</div>
+        <div class="eyebrow">Mathematics • Logic • Model Theory</div>
         <h1>OSANDA ILLEPERUMA</h1>
-        <p>Mathematics PhD student, instructor, and researcher in logic, model theory, o-minimality, and coalgebraic methods.</p>
-        <div class="contact-strip">
-          <a class="pill" href="mailto:oaillepe@iu.edu">oaillepe@iu.edu</a>
-          <a class="pill" href="mailto:osandaabhi@gmail.com">osandaabhi@gmail.com</a>
+        <p class="hero-subtitle">PhD student in mathematics working in logic, model theory, and categorical approaches to computation.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container card about">
+        <div>
+          <div class="section-title">Profile</div>
+          <h2>Mathematics PhD Student and Instructor</h2>
+          <p>
+            I am a fourth-year PhD student and Associate Instructor in Mathematics at
+            <strong>Indiana University Bloomington</strong>. My research interests include
+            <strong>model theory</strong>, <strong>o-minimality</strong>,
+            <strong>algebras/coalgebras</strong>, and <strong>term rewriting systems</strong>.
+            Currently, I am supervised by Prof. Larry Moss.
+          </p>
+          <div class="about-actions">
+            <a class="btn btn-primary" href="#contact"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Get in touch</a>
+            <a class="btn btn-secondary" href="cv.html" id="openCvModal"><svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>View CV</a>
+          </div>
         </div>
-        <div class="actions">
-          <a class="btn btn-primary" href="files/CV___Osanda_Illeperuma__Osanda_ New.pdf">Download PDF CV</a>
+
+        <div class="portrait-wrap">
+          <img class="portrait" src="image (2).jpg" alt="Portrait of Osanda Illeperuma" />
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container resume-layout">
-        <div class="stack">
-          <article class="card">
-            <div class="section-title">Education</div>
-            <div class="entry">
-              <h3>PhD in Mathematics, Indiana University, Bloomington, USA</h3>
-              <div class="meta">August 2022 – Present</div>
-              <p>CGPA: 3.88 / 4.00</p>
-            </div>
-            <div class="entry">
-              <h3>MA in Mathematics, Indiana University, Bloomington, USA</h3>
-              <div class="meta">August 2022 – February 2024</div>
-              <p>CGPA: 3.75 / 4.00</p>
-            </div>
-            <div class="entry">
-              <h3>BSc Honors Degree in Mathematics, University of Colombo, Sri Lanka</h3>
-              <div class="meta">January 2017 – May 2021</div>
-              <p>CGPA: 3.94 / 4.30</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="section-title">Skills</div>
-            <div class="skill-list">
-              <span class="skill-tag">Problem Solving</span>
-              <span class="skill-tag">Proof Engineering</span>
-              <span class="skill-tag">Interdisciplinary Research</span>
-              <span class="skill-tag">Mathematical Communication</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">Lean</span>
-              <span class="skill-tag">GitHub</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="section-title">Academic Achievements</div>
-            <ul>
-              <li>Glenn Schober Memorial Fellowship — 2026</li>
-              <li>Hazel King Thompson Fellowship — 2023</li>
-              <li>College of Arts and Sciences Fellowship — 2022</li>
-              <li>Dharmadasa Punchihewa Memorial Prize for Mathematics — 2020</li>
-              <li>Gulamhusein A. J. Noorbhai Gold Medal for the Best Student in Mathematics — 2020</li>
-              <li>Douglas Amarasekara Prize for the Best Student in Mathematics — 2020</li>
-              <li>Mr. and Mrs. D. P. Epasinghe Memorial Gold Medal for Mathematics — 2020</li>
-              <li>Professor Valentine Joseph Memorial Gold Medal for the Best Student in Mathematics — 2020</li>
-            </ul>
-          </article>
+    <section id="talks" class="grid-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-title with-icon"><svg class="icon" aria-hidden="true"><use href="#icon-talk"></use></svg>Talks + Travel</div>
+            <h2>Explanatory Talks and Past Conferences</h2>
+          </div>
+          <!-- <p>
+            explanatory talks, conference talks, and upcoming presentations.
+          </p> -->
         </div>
 
-        <div class="stack">
-          <article class="card">
-            <div class="section-title">Research Experience</div>
-            <div class="entry">
-              <h3>Category Theoretic Applications in Computer Science</h3>
-              <div class="meta">Advisor: Dr. Jayampathy Ratnayake</div>
-              <p>The research focused on surveying the formalization of automata theory in computer science within a category-theoretic framework.</p>
-            </div>
-            <div class="entry">
-              <h3>Model Theory, O-minimal Structures, Initial Algebras and Terminal Coalgebras</h3>
-              <div class="meta">PhD research project · Advisor: Dr. Lawrence S. Moss</div>
-              <p>The project focuses on o-minimal structures generated by Pfaffian and Noetherian functions, and on formalizing and analyzing their properties using algebraic and coalgebraic methods.</p>
-            </div>
-          </article>
 
-          <article class="card">
-            <div class="section-title">Working Experience</div>
-            <div class="entry">
-              <h3>Associate Instructor, Department of Mathematics, Indiana University</h3>
-              <div class="meta">May 2023 – Present</div>
-            </div>
-            <div class="entry">
-              <h3>Graduate Teaching Assistant, Department of Mathematics, Indiana University</h3>
-              <div class="meta">January 2023 – May 2023</div>
-            </div>
-            <div class="entry">
-              <h3>Temporary Assistant Lecturer, Department of Mathematics, University of Colombo</h3>
-              <div class="meta">November 2021 – May 2022</div>
-            </div>
-            <div class="entry">
-              <h3>Teaching Assistant, Department of Mathematics, University of Colombo</h3>
-              <div class="meta">May 2021 – November 2021</div>
-            </div>
-          </article>
+        <div class="grid">
+          <article class="info-card reveal-card" tabindex="0">
+            <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-talk"></use></svg>Explanatory Talks</h3>
+            <p class="card-hint">Most recent talk shown below. Hover or focus to view the full list.</p>
 
-          <article class="card">
-            <div class="section-title">Extra-Curricular Activities</div>
-            <div class="entry">
-              <h3>Local Organization Committee Member, CALCO 2023 &amp; MFPS XXXIX</h3>
-              <div class="meta">2023</div>
-              <p>Member of the local organization committee for the conferences hosted at Indiana University Bloomington on June 19–23, 2023.</p>
+            <div class="reveal-preview">
+              <strong>Systems of PDEs as Coalgebras</strong><br>
+              Graduate Student Seminar, Indiana University Bloomington, 2026
             </div>
-            <div class="entry">
-              <h3>President, Epsilon Delta Society, Department of Mathematics, University of Colombo</h3>
-              <div class="meta">2019 – 2020</div>
-              <ul>
-                <li>Organized the TIMO and HKIMO heats award ceremony in collaboration with the Sri Lanka Olympiad Mathematics Foundation.</li>
-                <li>Organized workshops for school students preparing for SLMC, TIMO, HKIMO, and HKISO.</li>
-                <li>Initiated the problem-solving session “A Date with Putnam” for science undergraduates.</li>
-              </ul>
-            </div>
-            <div class="entry">
-              <h3>Other Activities and Hobbies</h3>
-              <ul>
-                <li>President, Interact Club, St. Aloysius’ College-Galle (2012–2013)</li>
-                <li>Member, Gavel Club (2018–2021)</li>
-                <li>Chess, badminton, and music — violin, guitar, and keyboard</li>
+
+            <div class="reveal-overlay" aria-label="Explanatory talks details">
+              <h4>Explanatory Talks</h4>
+              <ul class="reveal-list">
+                <li>
+                  <strong>Systems of PDEs as Coalgebras</strong><br>
+                  Graduate Student Seminar, Indiana University Bloomington, 2026
+                </li>
+                <li>
+                  <strong>Introduction to Natural Logic</strong><br>
+                  Graduate Student Seminar, Indiana University Bloomington, 2024
+                </li>
               </ul>
             </div>
           </article>
+
+          <article class="info-card">
+            <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>Upcoming</h3>
+            <p>Future talks, invited lectures, and works in progress will be added here.</p>
+          </article>
+
+          <article class="info-card reveal-card" tabindex="0">
+            <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>Past Conferences</h3>
+            <p class="card-hint">Most recent conference shown below. Hover or focus to view the full list.</p>
+
+            <div class="reveal-preview">
+              <strong><a href="https://icms.ac.uk/activities/workshop/a85/">A85: Workshop in algebra and arithmetic from model theory (online)</a></strong><br>
+              ICMS, Bayes Centre, Edinburgh, May 2026
+            </div>
+
+            <div class="reveal-overlay" aria-label="Past conferences details">
+              <h4>Past Conferences</h4>
+              <ul class="reveal-list">
+                <li>
+                  <strong><a href="https://icms.ac.uk/activities/workshop/a85/">A85: Workshop in algebra and arithmetic from model theory (online)</a></strong><br>
+                  ICMS, Bayes Centre, Edinburgh, May 2026
+                </li>
+                <li>
+                  <strong><a href="https://brinmrc.umd.edu/fall-25-nadstm/">North American Set Theory Meeting</a></strong><br>
+                  Brin Mathematics Research Center, Department of Mathematics, University of Maryland, October 2025
+                </li>
+                <li>
+                  <strong><a href="https://coalg.org/calco-mfps-2023/">CALCO 2023 & MFPS XXXIX</a></strong><br>
+                  Indiana University Bloomington, June 2023
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="teaching" class="grid-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-title with-icon"><svg class="icon" aria-hidden="true"><use href="#icon-teaching"></use></svg>Teaching</div>
+            <h2>Courses and Instruction</h2>
+          </div>
+          <!-- <br>
+          <p>
+            "If you can't solve a problem, then there is an easier problem you can solve: find it." — <i>George Pólya</i>
+          </p> -->
+        </div>
+
+        <div class="grid teaching-grid">
+<article class="info-card past-courses-card" tabindex="0">
+            <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Past Courses</h3>
+            <p class="card-hint">Most recent assignments are shown below. Hover over this card to view the full history.</p>
+
+            <div class="past-courses-preview" aria-label="Recent past course assignments">
+              <div class="past-preview-item">
+                <span class="past-preview-label"><svg class="icon" aria-hidden="true"><use href="#icon-teaching"></use></svg>Teaching</span>
+                <strong>MATH - X201 : Transition to Calculus II</strong>
+                <span>Spring 2026</span>
+              </div>
+
+              <div class="past-preview-item">
+                <span class="past-preview-label"><svg class="icon" aria-hidden="true"><use href="#icon-talk"></use></svg>Recitation</span>
+                <strong>MATH - M119 : Brief Survey of Calculus I</strong>
+                <span>Summer 2026</span>
+              </div>
+
+              <div class="past-preview-item">
+                <span class="past-preview-label"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Assisting</span>
+                <strong>MATH - M119 : Transition to Calculus II</strong>
+                <span>Spring 2024</span>
+              </div>
+            </div>
+
+            <div class="past-courses-overlay" aria-label="Past courses details">
+              <h4>Past Courses</h4>
+
+              <div class="past-course-group">
+                <h5>Teaching</h5>
+                <ul>
+                  <li>
+                    <strong>MATH - X201 : Transition to Calculus II</strong><br>
+                    Spring 2026
+                  </li>
+                  <li>
+                    <strong>MATH - J111 : Intro to College Math I</strong><br>
+                    Spring 2025
+                  </li>
+                  <li>
+                    <strong>MATH - D117 : Introduction to Finite Math II</strong><br>
+                    Fall 2024
+                  </li>
+                </ul>
+              </div>
+
+              <div class="past-course-group">
+                <h5>Recitation</h5>
+                <ul>
+                  <li>
+                    <strong>MATH - M212 : Calculus II</strong><br>
+                    Fall 2025
+                  </li>
+                  <li>
+                    <strong>MATH - M119 : Brief Survey of Calculus I</strong><br>
+                    Summer 2026, Summer 2025, Summer 2024, Summer 2023
+                  </li>
+                </ul>
+              </div>
+
+              <div class="past-course-group">
+                <h5>Assisting</h5>
+                <ul>
+                  <li>
+                    <strong>MATH - M119 : Transition to Calculus II</strong><br>
+                    Fall 2023, Spring 2023, Spring 2024
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+
+          <div class="teaching-side-grid">
+            <article class="info-card compact-teaching-card">
+              <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-teaching"></use></svg>Current Teaching</h3>
+              <p>Recitation leader for MATH - M119, Brief Survey of Calculus I.</p>
+            </article>
+
+            <article class="info-card compact-teaching-card">
+              <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>Teaching Materials</h3>
+              <p>Selected worksheets, review guides, and course resources will be added here.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container card contact-box">
+        <div class="section-title with-icon"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Contact</div>
+        <h2>Let’s Connect</h2>
+        <div class="about-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="mailto:oaillepe@iu.edu"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Email Me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/osanda-illeperuma-60a22215b/">LinkedIn</a>
         </div>
       </div>
     </section>
@@ -378,5 +1267,57 @@
   <footer>
     <div class="container">© 2026 Osanda Illeperuma. Built with GitHub Pages.</div>
   </footer>
+
+
+  <div class="cv-modal" id="cvModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+    <div class="cv-modal-content">
+      <div class="cv-modal-header">
+        <h3 id="cvModalTitle" class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>Curriculum Vitae</h3>
+        <div class="cv-modal-actions">
+          <a class="cv-open-tab" href="cv.html" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>Open in new tab</a>
+          <button class="cv-close" id="closeCvModal" type="button" aria-label="Close CV window">Close</button>
+        </div>
+      </div>
+      <iframe class="cv-frame" src="cv.html" title="Osanda Illeperuma CV"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const openCvModal = document.getElementById('openCvModal');
+    const cvModal = document.getElementById('cvModal');
+    const closeCvModal = document.getElementById('closeCvModal');
+
+    function openModal(event) {
+      event.preventDefault();
+      cvModal.classList.add('is-open');
+      cvModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      closeCvModal.focus();
+    }
+
+    function closeModal() {
+      cvModal.classList.remove('is-open');
+      cvModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      openCvModal.focus();
+    }
+
+    openCvModal.addEventListener('click', openModal);
+    closeCvModal.addEventListener('click', closeModal);
+
+    cvModal.addEventListener('click', function (event) {
+      if (event.target === cvModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && cvModal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  </script>
+
 </body>
+
 </html>
