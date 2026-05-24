@@ -682,6 +682,103 @@
     .past-course-group strong {
       color: white;
     }
+
+
+    /* CV modal overlay */
+    .cv-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: rgba(5, 5, 5, 0.68);
+      backdrop-filter: blur(6px);
+    }
+
+    .cv-modal.is-open {
+      display: flex;
+    }
+
+    .cv-modal-content {
+      width: min(100%, 980px);
+      height: min(88vh, 900px);
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      animation: cvModalIn 0.24s ease;
+    }
+
+    @keyframes cvModalIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .cv-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f8fafc;
+    }
+
+    .cv-modal-header h3 {
+      color: var(--accent-dark);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .cv-close {
+      border: none;
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
+      padding: 0.55rem 0.9rem;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .cv-close:hover {
+      transform: translateY(-1px);
+      background: var(--accent-dark);
+    }
+
+    .cv-frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: white;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 640px) {
+      .cv-modal {
+        padding: 0.75rem;
+      }
+
+      .cv-modal-content {
+        height: 90vh;
+        border-radius: 18px;
+      }
+    }
+
   </style>
 </head>
 
@@ -720,7 +817,7 @@
           </p>
           <div class="about-actions">
             <a class="btn btn-primary" href="#contact">Get in touch</a>
-            <a class="btn btn-secondary" href="cv.html">View CV</a>
+            <a class="btn btn-secondary" href="cv.html" id="openCvModal">View CV</a>
           </div>
         </div>
 
@@ -953,6 +1050,54 @@
   <footer>
     <div class="container">© 2026 Osanda Illeperuma. Built with GitHub Pages.</div>
   </footer>
+
+
+  <div class="cv-modal" id="cvModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+    <div class="cv-modal-content">
+      <div class="cv-modal-header">
+        <h3 id="cvModalTitle">Curriculum Vitae</h3>
+        <button class="cv-close" id="closeCvModal" type="button" aria-label="Close CV window">Close</button>
+      </div>
+      <iframe class="cv-frame" src="cv.html" title="Osanda Illeperuma CV"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const openCvModal = document.getElementById('openCvModal');
+    const cvModal = document.getElementById('cvModal');
+    const closeCvModal = document.getElementById('closeCvModal');
+
+    function openModal(event) {
+      event.preventDefault();
+      cvModal.classList.add('is-open');
+      cvModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      closeCvModal.focus();
+    }
+
+    function closeModal() {
+      cvModal.classList.remove('is-open');
+      cvModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      openCvModal.focus();
+    }
+
+    openCvModal.addEventListener('click', openModal);
+    closeCvModal.addEventListener('click', closeModal);
+
+    cvModal.addEventListener('click', function (event) {
+      if (event.target === cvModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && cvModal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  </script>
+
 </body>
 
 </html>
