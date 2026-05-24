@@ -255,12 +255,18 @@
     }
 
     .teaching-grid {
-      grid-template-columns: 0.75fr 1.5fr 0.75fr;
+      grid-template-columns: 1.6fr 0.9fr;
       align-items: stretch;
     }
 
+    .teaching-side-grid {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.4rem;
+    }
+
     .compact-teaching-card {
-      min-height: 220px;
+      min-height: 0;
     }
 
     .info-card {
@@ -418,6 +424,10 @@
         align-items: start;
         flex-direction: column;
       }
+
+      .teaching-side-grid {
+        grid-template-rows: auto;
+      }
     }
 
     @media (max-width: 640px) {
@@ -560,19 +570,47 @@
     /* Full-card hover overlay for Past Courses */
     .past-courses-card {
       position: relative;
-      min-height: 360px;
+      min-height: 420px;
       overflow: hidden;
     }
 
     .past-courses-preview {
       margin-top: 0.8rem;
-      padding: 1rem 1.1rem;
+      display: grid;
+      gap: 0.85rem;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .past-preview-item {
+      padding: 0.95rem 1.05rem;
       border-radius: 18px;
       border: 1px solid #dde5ef;
       background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
       color: var(--accent-dark);
-      font-weight: 700;
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .past-preview-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .past-preview-item strong {
+      display: block;
+      font-size: 0.96rem;
+      line-height: 1.35;
+    }
+
+    .past-preview-item span:last-child {
+      display: block;
+      margin-top: 0.15rem;
+      color: #4c5864;
+      font-size: 0.88rem;
+      font-weight: 500;
     }
 
     .past-courses-card:hover .past-courses-preview,
@@ -813,17 +851,28 @@
         </div>
 
         <div class="grid teaching-grid">
-        <article class="info-card compact-teaching-card">
-            <h3>Current Teaching</h3>
-            <p>Recitation leader for MATH - M119, Brief Survey of Calculus I.</p>
-         </article>
-          
-         <article class="info-card past-courses-card" tabindex="0">
+<article class="info-card past-courses-card" tabindex="0">
             <h3>Past Courses</h3>
-            <p class="card-hint">Hover over this card to view all previous teaching details.</p>
+            <p class="card-hint">Most recent assignments are shown below. Hover over this card to view the full history.</p>
 
-            <div class="past-courses-preview">
-              Teaching • Recitation • Assisting
+            <div class="past-courses-preview" aria-label="Recent past course assignments">
+              <div class="past-preview-item">
+                <span class="past-preview-label">Teaching</span>
+                <strong>MATH - X201 : Transition to Calculus II</strong>
+                <span>Spring 2026</span>
+              </div>
+
+              <div class="past-preview-item">
+                <span class="past-preview-label">Recitation</span>
+                <strong>MATH - M119 : Brief Survey of Calculus I</strong>
+                <span>Summer 2026</span>
+              </div>
+
+              <div class="past-preview-item">
+                <span class="past-preview-label">Assisting</span>
+                <strong>MATH - M119 : Transition to Calculus II</strong>
+                <span>Spring 2024</span>
+              </div>
             </div>
 
             <div class="past-courses-overlay" aria-label="Past courses details">
@@ -872,11 +921,19 @@
               </div>
             </div>
           </article>
-          
-          <article class="info-card compact-teaching-card">
-            <h3>Teaching Materials</h3>
-            <p>Link lecture notes, office hours, syllabi, or course webpages here.</p>
-          </article>
+
+
+          <div class="teaching-side-grid">
+            <article class="info-card compact-teaching-card">
+              <h3>Current Teaching</h3>
+              <p>Recitation leader for MATH - M119, Brief Survey of Calculus I.</p>
+            </article>
+
+            <article class="info-card compact-teaching-card">
+              <h3>Teaching Materials</h3>
+              <p>Link lecture notes, office hours, syllabi, or course webpages here.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
