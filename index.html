@@ -254,6 +254,15 @@
       gap: 1.4rem;
     }
 
+    .teaching-grid {
+      grid-template-columns: 0.75fr 1.5fr 0.75fr;
+      align-items: stretch;
+    }
+
+    .compact-teaching-card {
+      min-height: 220px;
+    }
+
     .info-card {
       padding: 1.5rem;
       background: rgba(255, 255, 255, 0.8);
@@ -551,7 +560,7 @@
     /* Full-card hover overlay for Past Courses */
     .past-courses-card {
       position: relative;
-      min-height: 300px;
+      min-height: 360px;
       overflow: hidden;
     }
 
@@ -576,7 +585,7 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      padding: 1.4rem 1.3rem;
+      padding: 1.6rem 1.45rem;
       border-radius: 22px;
       background: linear-gradient(135deg, rgba(13, 53, 98, 0.98), rgba(21, 79, 147, 0.98));
       color: white;
@@ -803,11 +812,7 @@
           </p> -->
         </div>
 
-        <div class="grid">
-          <article class="info-card">
-            <h3>Current Teaching</h3>
-            <p>Recitation leader for MATH - M119, Brief Survey of Calculus I.</p>
-          </article>
+        <div class="grid teaching-grid">
 
          <article class="info-card past-courses-card" tabindex="0">
             <h3>Past Courses</h3>
@@ -864,7 +869,12 @@
             </div>
           </article>
 
-          <article class="info-card">
+          <article class="info-card compact-teaching-card">
+            <h3>Current Teaching</h3>
+            <p>Recitation leader for MATH - M119, Brief Survey of Calculus I.</p>
+          </article>
+          
+          <article class="info-card compact-teaching-card">
             <h3>Teaching Materials</h3>
             <p>Link lecture notes, office hours, syllabi, or course webpages here.</p>
           </article>
