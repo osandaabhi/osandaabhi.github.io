@@ -546,6 +546,95 @@
     .talk-dropdown-list strong {
       color: var(--accent-dark);
     }
+
+
+    /* Full-card hover overlay for Past Courses */
+    .past-courses-card {
+      position: relative;
+      min-height: 300px;
+      overflow: hidden;
+    }
+
+    .past-courses-preview {
+      margin-top: 0.8rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid #dde5ef;
+      background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
+      color: var(--accent-dark);
+      font-weight: 700;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .past-courses-card:hover .past-courses-preview,
+    .past-courses-card:focus-within .past-courses-preview {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+    }
+
+    .past-courses-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      padding: 1.4rem 1.3rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(13, 53, 98, 0.98), rgba(21, 79, 147, 0.98));
+      color: white;
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      overflow-y: auto;
+    }
+
+    .past-courses-card:hover .past-courses-overlay,
+    .past-courses-card:focus-within .past-courses-overlay {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .past-courses-overlay h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .past-course-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .past-course-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .past-course-group h5 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .past-course-group ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .past-course-group li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.45;
+    }
+
+    .past-course-group li:last-child {
+      border-bottom: none;
+    }
+
+    .past-course-group strong {
+      color: white;
+    }
   </style>
 </head>
 
@@ -720,61 +809,60 @@
             <p>Recitation leader for MATH - M119, Brief Survey of Calculus I.</p>
           </article>
 
-         <article class="info-card talk-dropdown-card">
-          <h3>Past Courses</h3>
-          <p class="card-hint">Hover to expand and view more details</p>
+         <article class="info-card past-courses-card" tabindex="0">
+            <h3>Past Courses</h3>
+            <p class="card-hint">Hover over this card to view all previous teaching details.</p>
 
-          <div class="talk-summary">
-            <strong>Teaching</strong><br>
-          </div>
+            <div class="past-courses-preview">
+              Teaching • Recitation • Assisting
+            </div>
 
-          <div class="talk-dropdown">
-            <ul class="talk-dropdown-list">
-              <li>
-                <strong>MATH - X201 : Transition to Calculus II</strong><br>
-                Spring 2026
-              </li>
-              <li>
-                <strong>MATH - J111 : Intro to College Math I</strong><br>
-                Spring 2025
-              </li>
-              <li>
-                <strong>MATH - D117 : Introduction to Finite Math II</strong><br>
-                Fall 2024
-              </li>
-            </ul>
-          </div>
-           
-          <div class="talk-summary">
-            <strong>Recitation</strong><br>
-          </div>
+            <div class="past-courses-overlay" aria-label="Past courses details">
+              <h4>Past Courses</h4>
 
-          <div class="talk-dropdown">
-            <ul class="talk-dropdown-list">
-              <li>
-                <strong>MATH - M212 : Calculus II</strong><br>
-                Fall 2025
-              </li>
-              <li>
-                <strong>MATH - M119 : Brief Survey of Calculus I</strong><br>
-                Summer 2026, Summer 2025, Summer 2024, Summer 2023
-              </li>
-            </ul>
-          </div>
+              <div class="past-course-group">
+                <h5>Teaching</h5>
+                <ul>
+                  <li>
+                    <strong>MATH - X201 : Transition to Calculus II</strong><br>
+                    Spring 2026
+                  </li>
+                  <li>
+                    <strong>MATH - J111 : Intro to College Math I</strong><br>
+                    Spring 2025
+                  </li>
+                  <li>
+                    <strong>MATH - D117 : Introduction to Finite Math II</strong><br>
+                    Fall 2024
+                  </li>
+                </ul>
+              </div>
 
-           <div class="talk-summary">
-            <strong>Assisting</strong><br>
-          </div>
+              <div class="past-course-group">
+                <h5>Recitation</h5>
+                <ul>
+                  <li>
+                    <strong>MATH - M212 : Calculus II</strong><br>
+                    Fall 2025
+                  </li>
+                  <li>
+                    <strong>MATH - M119 : Brief Survey of Calculus I</strong><br>
+                    Summer 2026, Summer 2025, Summer 2024, Summer 2023
+                  </li>
+                </ul>
+              </div>
 
-          <div class="talk-dropdown">
-            <ul class="talk-dropdown-list">
-              <li>
-                <strong>MATH - M119 : Transition to Calculus II</strong><br>
-                Fall 2023, Spring 2023, Spring 2024
-              </li>
-            </ul>
-          </div>
-        </article>
+              <div class="past-course-group">
+                <h5>Assisting</h5>
+                <ul>
+                  <li>
+                    <strong>MATH - M119 : Transition to Calculus II</strong><br>
+                    Fall 2023, Spring 2023, Spring 2024
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
 
           <article class="info-card">
             <h3>Teaching Materials</h3>
