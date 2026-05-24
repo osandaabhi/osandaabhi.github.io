@@ -523,7 +523,8 @@
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .talk-card:hover .talk-preview {
+    .talk-card:hover .talk-preview,
+    .talk-card:focus-within .talk-preview {
       transform: translateY(-3px) scale(1.01);
       box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
     }
@@ -566,6 +567,10 @@
     }
 
     /* adding new style for drop down */
+
+    .talks-spaced-card {
+      margin-top: 1.4rem;
+    }
     .talk-dropdown-card {
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
@@ -578,6 +583,7 @@
       background: linear-gradient(135deg, #f7faff 0%, #edf3fb 100%);
       color: var(--accent-dark);
       font-weight: 700;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
     .talk-dropdown {
@@ -591,7 +597,14 @@
         margin-top 0.25s ease;
     }
 
-    .talk-dropdown-card:hover .talk-dropdown {
+    .talk-dropdown-card:hover .talk-summary,
+    .talk-dropdown-card:focus-within .talk-summary {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(18, 58, 108, 0.12);
+    }
+
+    .talk-dropdown-card:hover .talk-dropdown,
+    .talk-dropdown-card:focus-within .talk-dropdown {
       max-height: 420px;
       opacity: 1;
       margin-top: 1rem;
@@ -1030,6 +1043,10 @@
       <path d="M4 12h.01"></path>
       <path d="M4 18h.01"></path>
     </symbol>
+    <symbol id="icon-profile" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4"></circle>
+      <path d="M4 21c1.6-4 4.4-6 8-6s6.4 2 8 6"></path>
+    </symbol>
   </svg>
   <header class="topbar">
     <div class="container nav">
@@ -1048,14 +1065,13 @@
       <div class="container">
         <div class="eyebrow">Mathematics • Logic • Model Theory</div>
         <h1>OSANDA ILLEPERUMA</h1>
-        <!-- <p class="hero-subtitle">PhD student in mathematics working in logic, model theory, and categorical approaches to computation.</p> -->
       </div>
     </section>
 
     <section id="about">
       <div class="container card about">
         <div>
-          <div class="section-title">Profile</div>
+          <div class="section-title with-icon"><svg class="icon" aria-hidden="true"><use href="#icon-profile"></use></svg>Profile</div>
           <h2>Mathematics PhD Student and Instructor</h2>
           <p>
             I am a fourth-year PhD student and Associate Instructor in Mathematics at
@@ -1088,66 +1104,52 @@
           </p> -->
         </div>
 
+        <article class="info-card talk-dropdown-card" tabindex="0">
+          <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-talk"></use></svg>Explanatory Talks</h3>
+          <p class="card-hint">Hover or focus to expand and view more talks.</p>
 
-        <div class="grid">
-          <article class="info-card reveal-card" tabindex="0">
-            <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-talk"></use></svg>Explanatory Talks</h3>
-            <p class="card-hint">Most recent talk shown below. Hover or focus to view the full list.</p>
+          <div class="talk-summary">
+            <strong>Systems of PDEs as Coalgebras</strong><br>
+            Graduate Student Seminar, Indiana University Bloomington, 2026
+          </div>
 
-            <div class="reveal-preview">
-              <strong>Systems of PDEs as Coalgebras</strong><br>
-              Graduate Student Seminar, Indiana University Bloomington, 2026
-            </div>
+          <div class="talk-dropdown">
+            <ul class="talk-dropdown-list">
+              <li>
+                <strong>Introduction to Natural Logic</strong><br>
+                Graduate Student Seminar, Indiana University Bloomington, 2024
+              </li>
+            </ul>
+          </div>
+        </article>
 
-            <div class="reveal-overlay" aria-label="Explanatory talks details">
-              <h4>Explanatory Talks</h4>
-              <ul class="reveal-list">
-                <li>
-                  <strong>Systems of PDEs as Coalgebras</strong><br>
-                  Graduate Student Seminar, Indiana University Bloomington, 2026
-                </li>
-                <li>
-                  <strong>Introduction to Natural Logic</strong><br>
-                  Graduate Student Seminar, Indiana University Bloomington, 2024
-                </li>
-              </ul>
-            </div>
-          </article>
+        <article class="info-card talks-spaced-card">
+          <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>Upcoming</h3>
+          <p>Future talks, invited lectures, and works in progress will be added here.</p>
+        </article>
 
-          <article class="info-card">
-            <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>Upcoming</h3>
-            <p>Future talks, invited lectures, and works in progress will be added here.</p>
-          </article>
+        <article class="info-card talk-dropdown-card talks-spaced-card" tabindex="0">
+          <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>Past Conferences</h3>
+          <p class="card-hint">Hover or focus to expand and view more details.</p>
 
-          <article class="info-card reveal-card" tabindex="0">
-            <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>Past Conferences</h3>
-            <p class="card-hint">Most recent conference shown below. Hover or focus to view the full list.</p>
+          <div class="talk-summary">
+            <strong><a href="https://icms.ac.uk/activities/workshop/a85/">A85: Workshop in algebra and arithmetic from model theory (online)</a></strong><br>
+            ICMS, Bayes Centre, Edinburgh, May 2026
+          </div>
 
-            <div class="reveal-preview">
-              <strong><a href="https://icms.ac.uk/activities/workshop/a85/">A85: Workshop in algebra and arithmetic from model theory (online)</a></strong><br>
-              ICMS, Bayes Centre, Edinburgh, May 2026
-            </div>
-
-            <div class="reveal-overlay" aria-label="Past conferences details">
-              <h4>Past Conferences</h4>
-              <ul class="reveal-list">
-                <li>
-                  <strong><a href="https://icms.ac.uk/activities/workshop/a85/">A85: Workshop in algebra and arithmetic from model theory (online)</a></strong><br>
-                  ICMS, Bayes Centre, Edinburgh, May 2026
-                </li>
-                <li>
-                  <strong><a href="https://brinmrc.umd.edu/fall-25-nadstm/">North American Set Theory Meeting</a></strong><br>
-                  Brin Mathematics Research Center, Department of Mathematics, University of Maryland, October 2025
-                </li>
-                <li>
-                  <strong><a href="https://coalg.org/calco-mfps-2023/">CALCO 2023 & MFPS XXXIX</a></strong><br>
-                  Indiana University Bloomington, June 2023
-                </li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
+          <div class="talk-dropdown">
+            <ul class="talk-dropdown-list">
+              <li>
+                <strong><a href="https://brinmrc.umd.edu/fall-25-nadstm/">North American Set Theory Meeting</a></strong><br>
+                Brin Mathematics Research Center, Department of Mathematics, University of Maryland, October 2025
+              </li>
+              <li>
+                <strong><a href="https://coalg.org/calco-mfps-2023/">CALCO 2023 & MFPS XXXIX</a></strong><br>
+                Indiana University Bloomington, June 2023
+              </li>
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
 
