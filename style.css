@@ -295,8 +295,9 @@ section {
 }
 
 .teaching-grid {
-  grid-template-columns: 1.6fr 0.9fr;
+  grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
+  width: 100%;
 }
 
 .teaching-side-grid {
@@ -713,6 +714,9 @@ footer {
 /* Full-card hover overlay for Past Courses */
 .past-courses-card {
   position: relative;
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
   min-height: 420px;
   overflow: hidden;
 }
