@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osanda Illeperuma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7">
+  <script src="site.js?v=1" defer></script>
+</head>
+
+<body>
+
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;" focusable="false">
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <path d="M4 7l8 6 8-6"></path>
+    </symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24">
+      <path d="M7 3h7l5 5v13H7z"></path>
+      <path d="M14 3v5h5"></path>
+      <path d="M9 13h6"></path>
+      <path d="M9 17h6"></path>
+    </symbol>
+    <symbol id="icon-talk" viewBox="0 0 24 24">
+      <path d="M4 5h16v10H8l-4 4z"></path>
+      <path d="M8 9h8"></path>
+      <path d="M8 12h5"></path>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <rect x="4" y="5" width="16" height="15" rx="2"></rect>
+      <path d="M8 3v4"></path>
+      <path d="M16 3v4"></path>
+      <path d="M4 10h16"></path>
+    </symbol>
+    <symbol id="icon-teaching" viewBox="0 0 24 24">
+      <path d="M4 5h16v11H4z"></path>
+      <path d="M8 20h8"></path>
+      <path d="M12 16v4"></path>
+      <path d="M8 9h8"></path>
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24">
+      <path d="M8 6h12"></path>
+      <path d="M8 12h12"></path>
+      <path d="M8 18h12"></path>
+      <path d="M4 6h.01"></path>
+      <path d="M4 12h.01"></path>
+      <path d="M4 18h.01"></path>
+    </symbol>
+    <symbol id="icon-profile" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4"></circle>
+      <path d="M4 21c1.6-4 4.4-6 8-6s6.4 2 8 6"></path>
+    </symbol>
+  </svg>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">Welcome!!!</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="index.html">About Me</a>
+        <a href="talks.html">Talks + Travel</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Mathematics • Logic • Model Theory</div>
+        <h1>OSANDA ILLEPERUMA</h1>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container card about">
+        <div>
+          <div class="section-title with-icon"><svg class="icon" aria-hidden="true"><use href="#icon-profile"></use></svg>Profile</div>
+          <h2>Mathematics PhD Student and Instructor</h2>
+          <p>
+            I am a fourth-year PhD student and Associate Instructor in Mathematics at
+            <strong>Indiana University Bloomington</strong>. My research interests include
+            <strong>model theory of differential fields</strong>, <strong>differential algebra</strong>,
+            <strong>algebras/coalgebras</strong>, and <strong>term rewriting systems</strong>.
+            Currently, I am supervised by Prof. Larry Moss.
+          </p>
+
+          <div class="profile-updates">
+            <div class="profile-updates-badge" aria-hidden="true">
+              <svg class="icon"><use href="#icon-calendar"></use></svg>
+            </div>
+            <div>
+              <h3>Life Updates</h3>
+              <span class="profile-updates-date">
+                <ul>
+                  <li>See you at 2026 North American Meeting of Association for Symbolic Logic!</li>
+                </ul>
+              </span>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a class="btn btn-primary" href="contact.html"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Get in touch</a>
+            <a class="btn btn-secondary" href="cv.html" id="openCvModal"><svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>View CV</a>
+          </div>
+        </div>
+
+        <div class="portrait-wrap">
+          <img class="portrait" src="image (2).jpg" alt="Portrait of Osanda Illeperuma" />
+        </div>
+      </div>
+    </section>
+
+    <section class="home-navigation">
+      <div class="container home-link-grid">
+        <a class="info-card home-link-card" href="talks.html">
+          <svg class="icon" aria-hidden="true"><use href="#icon-talk"></use></svg>
+          <div>
+            <h3>Talks + Travel</h3>
+            <p>Explanatory talks and past conferences.</p>
+          </div>
+        </a>
+
+        <a class="info-card home-link-card" href="teaching.html">
+          <svg class="icon" aria-hidden="true"><use href="#icon-teaching"></use></svg>
+          <div>
+            <h3>Teaching</h3>
+            <p>Courses taught, recitations, and assisting experience.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Osanda Illeperuma. Built with GitHub Pages.</div>
+  </footer>
+
+
+  <div class="cv-modal" id="cvModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+    <div class="cv-modal-content">
+      <div class="cv-modal-header">
+        <h3 id="cvModalTitle" class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>Curriculum Vitae</h3>
+        <div class="cv-modal-actions">
+          <a class="cv-open-tab" href="cv.html" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>Open in new tab</a>
+          <button class="cv-close" id="closeCvModal" type="button" aria-label="Close CV window">Close</button>
+        </div>
+      </div>
+      <iframe class="cv-frame" src="cv.html" title="Osanda Illeperuma CV"></iframe>
+    </div>
+  </div>
+</body>
+</html>
