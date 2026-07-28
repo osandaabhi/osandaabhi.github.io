@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
@@ -180,84 +180,75 @@
             <div class="section-title with-icon"><svg class="icon" aria-hidden="true"><use href="#icon-teaching"></use></svg>Teaching</div>
             <h2>Courses and Instruction</h2>
           </div>
-          <!-- <br>
-          <p>
-            "If you can't solve a problem, then there is an easier problem you can solve: find it." — <i>George Pólya</i>
-          </p> -->
         </div>
 
-        <div class="grid teaching-grid">
-<article class="info-card past-courses-card" tabindex="0" style="grid-column: 1 / -1;">
-            <h3 class="heading-icon"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Past Courses</h3>
-            <p class="card-hint">Most recent assignments are shown below. Hover over this card to view the full history.</p>
-
-            <div class="past-courses-preview" aria-label="Recent past course assignments">
-              <div class="past-preview-item">
-                <span class="past-preview-label"><svg class="icon" aria-hidden="true"><use href="#icon-teaching"></use></svg>Teaching</span>
-                <strong>MATH - X201 : Transition to Calculus II</strong>
-                <span>Spring 2026</span>
-              </div>
-
-              <div class="past-preview-item">
-                <span class="past-preview-label"><svg class="icon" aria-hidden="true"><use href="#icon-talk"></use></svg>Recitation</span>
-                <strong>MATH - M119 : Brief Survey of Calculus I</strong>
-                <span>Summer 2026</span>
-              </div>
-
-              <div class="past-preview-item">
-                <span class="past-preview-label"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Assisting</span>
-                <strong>MATH - M119 : Brief Survey of Calculus I</strong>
-                <span>Spring 2024</span>
-              </div>
+        <article class="teaching-portfolio info-card">
+          <header class="teaching-portfolio-header">
+            <div class="teaching-portfolio-icon" aria-hidden="true">
+              <svg class="icon"><use href="#icon-teaching"></use></svg>
             </div>
-
-            <div class="past-courses-overlay" aria-label="Past courses details">
-              <h4>Past Courses</h4>
-
-              <div class="past-course-group">
-                <h5>Teaching</h5>
-                <ul>
-                  <li>
-                    <strong>MATH - X201 : Transition to Calculus II</strong><br>
-                    Spring 2026
-                  </li>
-                  <li>
-                    <strong>MATH - J111 : Intro to College Math I</strong><br>
-                    Spring 2025
-                  </li>
-                  <li>
-                    <strong>MATH - D117 : Introduction to Finite Math II</strong><br>
-                    Fall 2024
-                  </li>
-                </ul>
-              </div>
-
-              <div class="past-course-group">
-                <h5>Recitation</h5>
-                <ul>
-                  <li>
-                    <strong>MATH - M212 : Calculus II</strong><br>
-                    Fall 2025
-                  </li>
-                  <li>
-                    <strong>MATH - M119 : Brief Survey of Calculus I</strong><br>
-                    Summer 2026, Summer 2025, Summer 2024, Summer 2023
-                  </li>
-                </ul>
-              </div>
-
-              <div class="past-course-group">
-                <h5>Assisting</h5>
-                <ul>
-                  <li>
-                    <strong>MATH - M119 : Brief Survey of Calculus I</strong><br>
-                    Fall 2023, Spring 2023, Spring 2024
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <p class="teaching-institution">Indiana University Bloomington</p>
+              <h3>Past Courses</h3>
             </div>
-          </article>
-        </div>
+          </header>
+
+          <div class="teaching-role-list">
+            <section class="teaching-role" aria-labelledby="teaching-role-title">
+              <div class="teaching-role-heading">
+                <span class="teaching-role-number" aria-hidden="true">01</span>
+                <h4 id="teaching-role-title">Teaching</h4>
+              </div>
+
+              <ul class="teaching-course-list">
+                <li>
+                  <strong>MATH - X201 : Transition to Calculus II</strong>
+                  <span>Spring 2026</span>
+                </li>
+                <li>
+                  <strong>MATH - J111 : Intro to College Math I</strong>
+                  <span>Spring 2025</span>
+                </li>
+                <li>
+                  <strong>MATH - D117 : Introduction to Finite Math II</strong>
+                  <span>Fall 2024</span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="teaching-role" aria-labelledby="recitation-role-title">
+              <div class="teaching-role-heading">
+                <span class="teaching-role-number" aria-hidden="true">02</span>
+                <h4 id="recitation-role-title">Recitation</h4>
+              </div>
+
+              <ul class="teaching-course-list">
+                <li>
+                  <strong>MATH - M212 : Calculus II</strong>
+                  <span>Fall 2025</span>
+                </li>
+                <li>
+                  <strong>MATH - M119 : Brief Survey of Calculus I</strong>
+                  <span>Summer 2026, Summer 2025, Summer 2024, Summer 2023</span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="teaching-role" aria-labelledby="assisting-role-title">
+              <div class="teaching-role-heading">
+                <span class="teaching-role-number" aria-hidden="true">03</span>
+                <h4 id="assisting-role-title">Assisting</h4>
+              </div>
+
+              <ul class="teaching-course-list">
+                <li>
+                  <strong>MATH - M119 : Brief Survey of Calculus I</strong>
+                  <span>Fall 2023, Spring 2023, Spring 2024</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
       </div>
     </section>
 
